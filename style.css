@@ -39,6 +39,7 @@ nav {
     top: 0;
     padding: 0 30px;
     font-family: san;
+    z-index: 999;
 }
 
 
@@ -133,7 +134,7 @@ nav {
 
 .hero {
     width: 100%;
-    /* height: 100vh; */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,11 +149,11 @@ nav {
 
 .hero-text h1 {
     width: 80%;
-    font-size: 5.1vw;
+    font-size: 4.2rem;
     font-weight: 100;
     position: relative;
     text-align: center;
-    line-height: 6.2vw;
+    line-height: 5.2rem;
     z-index: 99;
     pointer-events: none;
 }
@@ -172,13 +173,15 @@ nav {
 .hero-text h2 {
     position: absolute;
     top: 70%;
-    left: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     margin-top: 30px;
     font-family: sans-serif;
     letter-spacing: -0.2px;
-    font-size: 1.6vw;
+    font-size: 1.6rem;
     font-weight: 500;
     text-align: center;
+    z-index: 99;
 }
 
 .hero-text h2 button {
@@ -211,55 +214,159 @@ nav {
     margin: 0;
 }
 
-.hero-images {}
+
+.hero-images .img-container .hero-img1,
+.hero-images .img-container .hero-img2,
+.hero-images .img-container .hero-img3 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+
+}
 
 
-.hero-images .hero-img1 {
+.hero-images .img-container .hero-img1 {
     width: 360px;
     height: 510px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* position: absolute; */
     top: 16%;
     left: 9%;
-    z-index: 1;
 }
 
-.hero-images .hero-img2 {
+.hero-images .img-container .hero-img2 {
     width: 260px;
     height: 220px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* position: absolute; */
     top: 17%;
     right: 24%;
-    z-index: 1;
 }
 
-.hero-images .hero-img3 {
+.hero-images .img-container .hero-img3 {
     width: 290px;
     height: 290px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* position: absolute; */
     top: 51%;
     right: 8%;
-    z-index: 1;
 }
 
 img {
     transition: margin 0.8s ease;
 }
 
-.hero-images img:hover {
+.hero-images .img-container img:hover {
     box-shadow: 0 2px 10px rgba(46, 45, 45, 0.323);
     margin-top: -10px;
 
 }
 
+.duplicate {
+    display: none;
+}
+
+@keyframes moving {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-150%);
+
+    }
+}
+
 
 
 /***** End Hero Section *****/
+
+@media (max-width: 1150px) {
+
+    .hero-images .img-container .hero-img1 {
+        width: 260px;
+        height: 410px;
+        top: 20%;
+        left: 9%;
+    }
+
+    .hero-images .img-container .hero-img2 {
+        width: 210px;
+        height: 180px;
+        top: 17%;
+        right: 14%;
+    }
+
+    .hero-images .img-container .hero-img3 {
+        width: 200px;
+        height: 200px;
+        top: 59%;
+        right: 9%;
+    }
+
+}
+
+@media (max-width: 900px) {
+    .navMenu {
+        display: block;
+    }
+
+    .navlink {
+        display: none;
+
+    }
+}
+
+@media (max-width: 850px) {
+    nav {
+        background-color: #fff;
+    }
+
+    .hero-images .img-container .hero-img1,
+    .hero-images .img-container .hero-img2,
+    .hero-images .img-container .hero-img3 {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: static;
+    }
+
+    .hero {
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .hero-text {
+        width: 100%;
+        height: 100vh;
+    }
+    .hero-text h1{
+        font-size: 3.4rem;
+    }
+
+    .hero-images::-webkit-scrollbar {
+        display: none;
+    }
+
+    .img-container {
+        width: 100%;
+        animation: moving 10s linear infinite;
+        display: flex;
+        flex-direction: row;
+        column-gap: 30px;
+    }
+
+    .duplicate {
+        display: block;
+    }
+
+    .hero-images {
+        overflow-x: scroll;
+        overflow-y: hidden;
+
+        width: 100%;
+
+    }
+
+}
+
 
 @media (max-width:600px) {
     nav {
@@ -271,23 +378,8 @@ img {
         scale: 1;
     }
 
-    .navMenu {
-        display: block;
-    }
-
-    .navlink {
-        display: none;
-
-    }
-
     .hero {
-        /* width: 100%;
-        height: 50vh; */
-        /* background-color: red; */
         flex-direction: column;
-
-        /* overflow-y: auto;
-        overflow-x: scroll; */
     }
 
     .hero-text {
@@ -299,24 +391,25 @@ img {
         font-size: 8vw;
         line-height: 9vw;
     }
-
+   
     .hero-text h1::after {
         bottom: -16px;
     }
 
     .hero-text h2 {
-        top: 30%;
-        left: 30%;
+        top: 35%;
+        left: 5 0%;
         font-size: 1rem;
     }
-    .hero .hero-images{
+
+    .hero .hero-images {
         display: flex;
         overflow: hidden;
 
     }
 
-    .hero .hero-images img {
-        width: 360px;
-        height: 510px;
+    .hero .hero-images .img-container img {
+        width: 460px;
+        height: 310px;
     }
 }
