@@ -1,4 +1,9 @@
 @font-face {
+    font-family: sequel;
+    src: url(./Font_Family/sequel-sans-displaysequel-sans-display-Regular-undefined.woff2);
+}
+
+@font-face {
     font-family: copper;
     src: url(./Font_Family/CooperLtBT-Regular.ttf);
 }
@@ -40,6 +45,7 @@ nav {
     padding: 0 30px;
     font-family: san;
     z-index: 999;
+    background-color: white;
 }
 
 
@@ -272,6 +278,52 @@ img {
     }
 }
 
+/* About */
+
+.aboutUs {
+    width: 100%;
+    height: 77vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.round{
+    display: block;
+    width: 15px;
+    height: 25px ;
+    border-radius: 50%;
+    /* margin-right: 2px; */
+    background-color: springgreen;
+}
+
+.aboutHeading {
+    width: 100%;
+    /* height: 100%; */
+   
+}
+.aboutHeading h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-family: sequel;
+}
+
+.aboutPara{
+    width: 100%;
+    /* height: 100%; */
+    padding: 1vw 20vw;
+}
+.aboutPara p{
+    text-align: center;
+    font-size: 3rem;
+    line-height: 1.3;
+}
 
 
 /***** End Hero Section *****/
@@ -337,7 +389,8 @@ img {
         width: 100%;
         height: 100vh;
     }
-    .hero-text h1{
+
+    .hero-text h1 {
         font-size: 3.4rem;
     }
 
@@ -391,7 +444,7 @@ img {
         font-size: 8vw;
         line-height: 9vw;
     }
-   
+
     .hero-text h1::after {
         bottom: -16px;
     }
