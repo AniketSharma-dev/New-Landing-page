@@ -1,3 +1,8 @@
+
+gsap.to(".")
+
+
+
 gsap.from(".hero-img1", {
   delay: 0.4,
   opacity: 0,
